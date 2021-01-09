@@ -1,0 +1,162 @@
+ErrorDocument 401 /errors/401.html
+ErrorDocument 403 /errors/403.php
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
+
+DirectoryIndex index.html start.php index.php
+
+Order Allow,Deny
+Allow from all
+Deny from 212.160.99.24 212.160.99.25 212.160.99.26 212.160.99.27 212.160.99.28 212.160.99.29 212.160.99.30 212.160.99.31
+
+RewriteEngine On
+RewriteBase /
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^contractors-zachodniopomorskie$ contractors-zachodnio_pomorskie.php [L]
+
+## kontakt
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^kontakt\.html,(.*)?$ index.php?module=contact&lng=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^kontakt\.html?$ index.php?module=contact [L]
+
+## static
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^s([0-9]+)_(.*)\.html,(.*)?$ index.php?module=static&act=show,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^s([0-9]+)_(.*)\.html?$ index.php?module=static&act=show,$1 [L]
+
+## szkolenia
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szk_([0-9]+)\.html,(.*)?$ index.php?module=trainings&act=date,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szk_([0-9]+)\.html?$ index.php?module=trainings&act=date,$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szkolenie_([0-9]+)\.html,(.*)?$ index.php?module=trainings&act=show,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szkolenie_([0-9]+)\.html?$ index.php?module=trainings&act=show,$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szkolenie_([0-9]+)-polec\.html,(.*)?$ index.php?module=trainings&act=tellafriend,$1&lng=$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szkolenie_([0-9]+)-polec\.html?$ index.php?module=trainings&act=tellafriend,$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^polec_znajomemu_([0-9]+)s-([a-z]+)\.html,(.*)?$ index.php?module=trainings&act=tellafriendS,$1,$2&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^polec_znajomemu_([0-9]+)s-([a-z]+)\.html?$ index.php?module=trainings&act=tellafriendS,$1,$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szk([0-9]+)_p_(.*)\.html,(.*)?$ index.php?module=trainings&act=show,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szk([0-9]+)_p_(.*)\.html?$ index.php?module=trainings&act=show,$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szk([0-9]+)_(.*)\.html,(.*)?$ index.php?module=trainings&act=category,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^szk([0-9]+)_(.*)\.html?$ index.php?module=trainings&act=category,$1 [L]
+
+## articles
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^a([0-9]+)_(.*)\.html,(.*)?$ index.php?module=articles&act=show,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^a([0-9]+)_(.*)\.html?$ index.php?module=articles&act=show,$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^a_c([0-9]+)_(.*)\.html,(.*)?$ index.php?module=articles&act=category,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^a_c([0-9]+)_(.*)\.html?$ index.php?module=articles&act=category,$1 [L]
+
+## gallery
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^g([0-9]+)_z([0-9]+)_(.*)\.html,(.*)?$ index.php?module=gallery&act=zoom,$2&lng=$4 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^g([0-9]+)_z([0-9]+)_(.*)\.html?$ index.php?module=gallery&act=zoom,$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^g([0-9]+)_(.*)\.html,(.*)?$ index.php?module=gallery&act=show,$1&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^g([0-9]+)_(.*)\.html?$ index.php?module=gallery&act=show,$1 [L]
+
+
+## cms
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)-(.*)-([A-Za-z0-9_]+)-([0-9]+)\.php,(.*)?$ index.php?module=$1&act=$2,$3,$4,$5&lng=$6 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)-(.*)-([A-Za-z0-9_]+)\.php,(.*)?$ index.php?module=$1&act=$2,$3,$4&lng=$5 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)-(.*)\.php,(.*)?$ index.php?module=$1&act=$2,$3&lng=$4 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)\.php,(.*)?$ index.php?module=$1&act=$2&lng=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)\.php,(.*)?$ index.php?module=$1&lng=$2 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)-(.*)-([A-Za-z0-9_]+)-([0-9]+)\.php?$ index.php?module=$1&act=$2,$3,$4,$5 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)-(.*)-([A-Za-z0-9_]+)\.php?$ index.php?module=$1&act=$2,$3,$4 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)-(.*)\.php?$ index.php?module=$1&act=$2,$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)-(.*)\.php?$ index.php?module=$1&act=$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)\.php?$ index.php?module=$1 [L]

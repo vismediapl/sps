@@ -1,0 +1,29 @@
+[start:technical]$dateform$<form action="{spath}" method="post">
+<table cellpadding="0" cellspacing="0" id="technical">
+<tr>
+<td>
+{browsers}</td>
+<td>
+{vbrowsers}</td>
+<td>
+{robots}</td>
+</tr>
+<tr>
+<td>
+{oses}</td>
+<td>
+{voses}</td>
+<td>
+{websearchers}</td>
+</tr>
+<tr>
+<td>
+{flash}</td>
+<td>
+{screens}</td>
+<td>
+{java}{javascript}{cookies}</td>
+</tr>
+</table>
+{adminbuttons}</form>
+[/end]

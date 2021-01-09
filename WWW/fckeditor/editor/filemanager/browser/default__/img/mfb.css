@@ -1,0 +1,39 @@
+body { background: #aaa; }
+body, table, input, button { font: 11px Tahoma, Arial, Helvetica, sans-serif; }
+body { margin: 0; padding: 0; }
+img { border: 0; vertical-align: middle; }
+a { text-decoration: none; color: #000; }
+a:hover { color: #369; }
+input.fi { border: 1px solid #eee; }
+form { margin: 0; padding: 0; }
+iframe { width: 0; height: 0; display: none; }
+
+#ft { border-collapse: collapse; width: 840px; height: 500px; /*border: 1px solid #000;*/ background: #fff; }
+td.dirs { width: 150px; background: #eee; border: 0; border-right: 1px solid #ccc; vertical-align: top; }
+td.dirs a { font-weight: bold; }
+td.newdir { width: 150px; border-right: 0; vertical-align: middle; padding: 0 10px; border-top: 1px solid #666; height: 30px; background: #ccc; }
+td.upload { padding: 0 10px; border-top: 1px solid #666; vertical-align: middle; text-align: right; height: 30px; background: #ccc; }
+
+div.error { border: 1px solid #800; background: #fcc; font-weight: bold; color: #f00; padding: 10px !important; }
+
+#right { height: 420px; overflow: auto; padding: 10px; }
+#left { width: 150px; height: 420px; overflow: auto; padding: 10px; }
+
+#top { padding: 0 10px; border-bottom: 1px solid #ccc; background: #999; font-size: 12px; color: #fff; height: 30px; vertical-align: middle;}
+#top a { color: #fff; }
+#top a:hover { text-decoration: underline; }
+#dirs, #files { list-style: none; margin: 0; padding: 0; }
+#dirs li { display: block; background: url('d.gif') 0 0 no-repeat; margin: 0; padding: 2px 0 3px 20px; white-space: nowrap; }
+#files li { float: left; width: 150px; height: 155px; margin-right: 5px; margin-bottom: 5px; border: 1px dotted #eee; overflow: hidden; text-align: center; background: #fff; }
+#files li div.t { border-bottom: 1px dotted #ccc; margin-bottom: 5px; padding: 5px 0; color: #ccc; white-space: nowrap; }
+#files li div.b { border-top: 1px dotted #eee; margin-top: 5px; padding: 5px 0; font-size: 9px; line-height: 10px; }
+#files li div.b a { color: #ccc; }
+#files li img.thumb { border: 1px solid #ccc; }
+#files li.hov { background: #eee; border: 1px solid #ccc; }
+#files li.hov div.t { border-color: #000; color: #000; }
+#files li.hov div.b { border-color: #666; }
+#files li.hov div.b a { color: #999; }
+#files li.hov img.thumb { border-color: #666; background: #fff; }
+
+#loading { background: #000; position: absolute; top: 50%; left: 50%; margin-left: -50px; margin-top: -50px; width: 100px; height: 100px; filter: alpha(opacity=50); opacity: 0.5; -moz-opacity: 0.5; overflow: hidden; }
+#loading div { width: 100%; height: 100%; background: url('al.gif') 50% 50% no-repeat; color: #fff; padding: 2px; font-weight: bold; }

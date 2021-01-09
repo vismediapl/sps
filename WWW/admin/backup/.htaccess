@@ -1,0 +1,9 @@
+ErrorDocument 401 /errors/401.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
+
+AuthType Basic
+AuthName "Podaj dane logowania do katalogu"
+AuthUserFile /home/users/kompaniab3/public_html/supremalex/admin/backup/.htpasswd
+require valid-user

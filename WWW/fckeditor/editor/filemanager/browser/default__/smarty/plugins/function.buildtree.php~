@@ -1,0 +1,46 @@
+<?php
+function smarty_function_buildtree($params, &$smarty)
+{
+    if (!isset($params['from']) || !isset($params['template'])) {
+        $smarty->trigger_error("buildtree: missing 'from' or 'template' parameter");
+        return;
+    }
+    
+    if (!is_array($params['from'])) {
+	$smarty->trigger_error("buildtree: parameter 'from' is not an array");
+	return;
+    }
+
+    if($params['from'] == '' || $params['template'] == '') {
+        return;
+    }
+    
+ob_start();
+echo('<ul>');
+function tree_node($array, $template)
+{
+	foreach ($array as $key => $item)
+	{
+		$repl = array();
+		foreach ($item as $ikey => $iitem)
+			$repl['%'.$ikey.'%'] = $iitem;
+		echo('<li>');
+		echo(strtr($template, $repl));
+		if (!empty($item['sub']))
+		{
+			echo('<ul>');
+			tree_node($item['sub'], $template);
+			echo('</ul>');
+		}
+		echo('</li>');
+	}
+}
+tree_node($params['from'], $params['template']);
+echo('</ul>');
+return str_replace('<ul></ul>', '', ob_get_contents());
+ob_end_clean();
+}
+
+/* vim: set expandtab: */
+
+?>

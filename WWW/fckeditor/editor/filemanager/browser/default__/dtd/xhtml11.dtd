@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!ENTITY % xhtml-datatypes.module "INCLUDE"> 
+     <![%xhtml-datatypes.module;[ 
+     <!ENTITY % xhtml-datatypes.mod 
+     PUBLIC "-//W3C//ENTITIES XHTML Datatypes 1.0//EN"
+     "http://www.w3.org/TR/xhtml-modularization/DTD/xhtml-datatypes-1.mod"> 
+     %xhtml-datatypes.mod;]]>
+
+<!ENTITY % xhtml-qname.module "INCLUDE"> 
+     <![%xhtml-qname.module;[ 
+     <!ENTITY % xhtml-qname.mod 
+     PUBLIC "-//W3C//ENTITIES XHTML Qualified Names 1.0//EN"
+     "http://www.w3.org/TR/xhtml-modularization/DTD/xhtml-qname-1.mod"> 
+     %xhtml-qname.mod;]]>
+     <!ENTITY % iframe.qname "%XHTML.pfx;iframe">
+     <!ENTITY % Misc.extra "| %iframe.qname;">
+     <!ENTITY % xhtml11.dtd PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+     %xhtml11.dtd;
+
+<!ENTITY % xhtml-iframe.module "INCLUDE">
+     <![%xhtml-iframe.module;[ 
+     <!ENTITY % xhtml-iframe.mod 
+     PUBLIC "-//W3C//ELEMENTS XHTML Inline Frame Element 1.0//EN"
+     "http://www.w3.org/TR/xhtml-modularization/DTD/xhtml-iframe-1.mod">
+     %xhtml-iframe.mod;]]>
+
+<!ENTITY % xhtml-target.module "INCLUDE">
+   <![%xhtml-target.module;[ 
+   <!ENTITY % xhtml-target.mod 
+     PUBLIC "-//W3C//ELEMENTS XHTML Target Module//EN"
+   "http://www.w3.org/TR/xhtml-modularization/DTD/xhtml-target-1.mod"> 
+     %xhtml-target.mod;]]>
